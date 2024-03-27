@@ -16,4 +16,4 @@ print(pd.concat([dataframe_a, dataframe_b], axis=0))
 # Create row
 row = pd.Series([10, 'Chris', 'Chillon'], index=['id', 'first', 'last'])
 # Append row
-print(dataframe_a.append(row, ignore_index=True))
+print(pd.concat([dataframe_a, dataframe_b, row],ignore_index=True)) 
