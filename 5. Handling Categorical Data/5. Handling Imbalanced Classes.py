@@ -59,3 +59,4 @@ print("{:=^50s}".format("Split Line"))
 i_class0_upsampled = np.random.choice(i_class0, size=n_class1, replace=True)
 # Join together class 0's upsampled target vector with class 1's target vector
 print(np.concatenate((target[i_class0_upsampled], target[i_class1])))
+print(np.vstack((features[i_class0_upsampled,:], features[i_class1,:]))[0:5])

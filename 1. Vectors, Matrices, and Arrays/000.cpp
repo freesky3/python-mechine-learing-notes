@@ -1,21 +1,25 @@
-#include <iostream>
-using namespace std;
-int main() {
-    int num1, num2;
-    std::cout << "hh: ";
-    std::cin >> num1;
-    std::cout << "jj: ";
-    std::cin >> num2;
+#include <stdio.h>
+#include <math.h>
 
-    int sum = num1 + num2;
-    int difference = num1 - num2;
-    int product = num1 * num2;
-    double quotient = static_cast<double>(num1) / num2; // 使用 static_cast<double> 避免整数除法
-
-    std::cout << "hh: " << sum << std::endl;
-    std::cout << "hh: " << difference << std::endl;
-    std::cout << "hh: " << product << std::endl;
-    std::cout << "hh: " << quotient << std::endl;
-
+long long fall(int N){
+    if (N==0){
+        return 1;
+    }else{
+        return N*fall(N-1);
+    }
+}
+int main(){
+    float git;
+    scanf("%f", &git);
+    float a[10];
+    float sum = 0;
+    for (int i = 0;i<10;i++){
+        a[i] = pow(2, i)*fall(i)*fall(i)/fall(2*i+1);
+        sum += a[i];
+        if (a[i]<git){
+            break;
+        }
+    }
+    printf("%f\n", sum*2);
     return 0;
 }
